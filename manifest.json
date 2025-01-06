@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Website Blocker",
+    "version": "1.0",
+    "description": "Block unwanted websites with a customizable blocklist.",
+    "permissions": [
+        "storage",
+        "declarativeNetRequest",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "options_page": "options.html",
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "blocklist_rules",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    }
+}
